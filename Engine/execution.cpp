@@ -3,6 +3,7 @@
 #include<vector>
 #include<map>
 #include"../header/load.h"
+#include"../header/logical.h"
 using namespace std;
 
 void execution(string pc,bool flag[],map<string,string>&memory,string registers[],string cmd){
@@ -40,6 +41,12 @@ void execution(string pc,bool flag[],map<string,string>&memory,string registers[
          else if(res=="STA"){
             string add=cmd.substr(4,4);
             STA(add,registers,flag,memory);
+         }else if(res=="CMA"){
+            CMA(registers,flag);
+         }
+         else if(res=="CMP"){
+            char data1 = cmd[4];
+            CMP(data1,registers,flag,memory);
          }
      }
      else if(k==4){

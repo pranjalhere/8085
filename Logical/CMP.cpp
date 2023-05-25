@@ -1,15 +1,14 @@
 #include<iostream>
 #include<string>
 #include<map>
-#include"engine.h"
-
+#include"../header/regisfun.h" 
 using namespace std;
 
-void CMP(string data1,string registers[],bool flag[],map<string,string>&memory){
+void CMP(char data1,string registers[],bool flag[],map<string,string>&memory){
 
-    int len = data1.length();
-    if(len==1){
-        if(data1=="M"){
+
+  
+        if(data1=='M'){
             string address = registers[5]+registers[6];
             if(registers[0]<memory[address]){
                 flag[0]=true;
@@ -37,8 +36,4 @@ void CMP(string data1,string registers[],bool flag[],map<string,string>&memory){
             cout<<"Error"<<endl;
             exit(0);
         }
-    }else{
-        cout<<"Error"<<endl;
-        exit(0);
-    }
 }
