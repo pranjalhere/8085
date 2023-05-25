@@ -10,7 +10,7 @@ bool ishexadecimal(char a){
 }
 bool validData(string res){
     int len = res.length();
-    if(len==1 && ishexadecimal(res[0]) && ishexadecimal(res[1])){
+    if(len==4 && ishexadecimal(res[0]) && ishexadecimal(res[1]) && ishexadecimal(res[2])&& ishexadecimal(res[3])){
         return true;
     }else{
         return false;

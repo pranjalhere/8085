@@ -4,4 +4,8 @@ using namespace std;
 #include"../Load/MOV.cpp"
 #include"../Load/LDA.cpp"
 #include"../Load/LHLD.cpp"
+#include"../Load/LXI.cpp"
+#include"../Load/MVI.cpp"
+#include"../Load/SHLD.cpp"
+#include"../Load/STA.cpp"
 #endif

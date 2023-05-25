@@ -4,8 +4,7 @@
 #include<vector>
 #include<map>
 
-#include"./header/engine.h"
-
+#include"./header/executionphase.h"
 using namespace std;
 
 class vansh8085{
@@ -51,9 +50,8 @@ class vansh8085{
         // for(int i=0;i<Line.size();i++){
         //     cout<<Line[i]<<endl;
         // }
-        cout<<memory["2000"]<<endl;
-        cout<<memory["2001"];
-        
+
+        cout<<registers[0]<<endl;
     }
     void check(){
         if(Line[Line.size()-1]!="HLT"){
@@ -64,8 +62,6 @@ class vansh8085{
 
     void run()
     {
-        memory["2000"]="1234";
-        memory["2001"]="5678";
         executionphase(pc,flag,memory,registers,Line);
     }
 
