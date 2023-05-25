@@ -1,2 +1,2 @@
-CMP B
+XCHG
 HLT

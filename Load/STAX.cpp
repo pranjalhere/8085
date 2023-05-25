@@ -1,16 +1,18 @@
 #include<iostream>
 #include<string>
 #include<map>
-#include"engine.h"
+#include"../header/regisfun.h"
+#include"../header/addrfun.h"
+
 using namespace std;
 void STAX(string data1,string registers[],bool flag[],map<string,string>&memory){
-    int len = data1.length();
-    if(len==1){
-        if(validRegpair(data1)){
+    char ch = data1[0];
+    
+     if(validRegpair(ch)){
             string address="";
-            int index=registerNum(data1);
+            int index=registerNum(ch);
             address+=registers[index]+registers[index+1];
-            if(validAddress(address)){
+            if(validAddr(address)){
                 memory[address]=registers[0];
             }else{
                 cout<<"Error"<<endl;
@@ -20,8 +22,4 @@ void STAX(string data1,string registers[],bool flag[],map<string,string>&memory)
             cout<<"Error"<<endl;
             exit(0);
         }
-    }else{
-        cout<<"Error"<<endl;
-        exit(0);
-    }
 }

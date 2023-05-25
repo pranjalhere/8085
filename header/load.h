@@ -8,4 +8,6 @@ using namespace std;
 #include"../Load/MVI.cpp"
 #include"../Load/SHLD.cpp"
 #include"../Load/STA.cpp"
+#include"../Load/STAX.cpp"
+#include"../Load/XCHG.cpp"
 #endif

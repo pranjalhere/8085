@@ -57,6 +57,11 @@ void execution(string pc,bool flag[],map<string,string>&memory,string registers[
         else if(res=="SHLD"){
             string add=cmd.substr(5,4);
             SHLD(add,registers,flag,memory);
+        }else if(res=="STAX"){
+            string data1 = cmd.substr(5,1);
+            STAX(data1,registers,flag,memory);
+        }else if(res=="XCHG"){
+            XCHG(registers,flag);
         }
      }
      
