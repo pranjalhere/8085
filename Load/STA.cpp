@@ -1,19 +1,19 @@
 #include<iostream>
 #include<map>
 #include<string>
-#include"engine.h"
+#include"../header/addrfun.h"
 using namespace std;
 void STA(string data1,string registers[],bool flag[],map<string,string>&memory){
       int l2 = data1.length();
       if(l2==4){
-          if(validAddress(data1)){
+          if(validAddr(data1)){
               memory[data1]=registers[0];
           }else{
-              cout<<"Error"<<endl;
+              cout<<"Error STA"<<endl;
               exit(0);
           }
       }else{
-          cout<<"Error"<<endl;
+          cout<<"Error STA"<<endl;
           exit(0);
       }
 }

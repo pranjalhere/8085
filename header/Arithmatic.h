@@ -1,5 +1,5 @@
-#ifndef _ARITHMATIC_H
-#define _ARITHMATIC_H
-using namespace std;
-#include"../Aritmatic/ADD.cpp"
+#ifndef _arithmetic_h
+#define _arithmetic_h
+#include"../Arithmatic/ADD.cpp"
+
 #endif

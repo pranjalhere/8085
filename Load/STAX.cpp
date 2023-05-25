@@ -3,7 +3,6 @@
 #include<map>
 #include"engine.h"
 using namespace std;
-
 void STAX(string data1,string registers[],bool flag[],map<string,string>&memory){
     int len = data1.length();
     if(len==1){

@@ -1,6 +1,7 @@
 #ifndef _LOGICAL_H
 #define _LOGICAL_H
-using namespace std;
-#include"../Logical/CMA.cpp"
-#include"../Logical/CMP.cpp"
+
+void CMP(string,string[],bool[],map<string,string>&);
+void CMA(string[],bool[]);
+
 #endif
