@@ -1,15 +1,18 @@
 #include<iostream>
 #include<string>
 #include<map>
+#include"../header/regisfun.h"
+#include"../header/hexafun.h"
 
 using namespace std;
 
-void ADD(string data1,string registers[],bool flag[],map<string,string>&memory){
-    int len=data1.length();
+void ADD(string data,string registers[],bool flag[],map<string,string>&memory){
+    int len=data.length();
 
     if(len==1){
+        char data1 = data[0];
         if((validReg(data1))|| validRegpair(data1)){
-            if(data1!="M"){
+            if(data1!='M'){
                 int regId = (registerNum(data1));
                 //regiter 0 act as as the accumulator
                 registers[0]=Addhexa(registers[regId],registers[0],flag,true);
