@@ -3,6 +3,7 @@
 #include"Complement.cpp"
 #include<map>
 #include"../header/Converter.h"
+#include<bitset>
 using namespace std;
 void CMA(string registers[],bool flag[]){
     string comp =Complement(registers[0]);
