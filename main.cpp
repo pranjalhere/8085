@@ -17,10 +17,8 @@ class vansh8085{
     string pc;
     public:
     vansh8085(){
-       registers[0]="03";
-       registers[1]="38";
-        
-
+       registers[0]="05";
+       
         for(int i=0;i<8;i++){
             flag[i]=false;
         }

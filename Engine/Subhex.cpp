@@ -1,6 +1,7 @@
 // This file is to subtract the hexadecimal number and also for setting the bits
 #include<iostream>
 #include<string>
+#include"../header/Converter.h"
 using namespace std;
 
 string Subhex(string data1,string data2,bool flag[],bool carry){
@@ -10,8 +11,8 @@ string Subhex(string data1,string data2,bool flag[],bool carry){
     int op2[2];
     int calu[2];
 
-    // Converter_h_to_D(data1,op1);//converting the hexadecimal number to Decimal
-    // Converter_h_to_D(data2,op2);
+    Converter_h_to_D(data1,op1);//converting the hexadecimal number to Decimal
+    Converter_h_to_D(data2,op2);
     
     if(op1[1]<op2[1]){
         calu[1] = (16+op1[1]-op2[1]);

@@ -1,15 +1,18 @@
 #include<iostream>
 #include<string>
 #include<map>
-#include"engine.h"
+#include"../header/engine.h"
+#include"../header/addrfun.h"
+#include"../header/hexafun.h"
 using namespace std;
 
-void INR(string data1,string registers[],bool flag[],map<string,string>&memory){
-    int l1 = data1.length();
+void DCR(string data,string registers[],bool flag[],map<string,string>&memory){
+    int l1 = data.length();
     if(l1==1){
+        char data1 = data[0];
         if((validReg(data1))){
             // perform decrement on ther value stored in register
-            if(data1!="M"){
+            if(data1!='M'){
                 int registerId = registerNum(data1);
                 registers[registerId] = Subhex(registers[registerId],"01",flag,false);
             }else{
@@ -17,7 +20,7 @@ void INR(string data1,string registers[],bool flag[],map<string,string>&memory){
 
                 string address = "";
                 address = address+registers[5]+registers[6];
-                if((validAddress(address))){
+                if((validAddr(address))){
                     memory[address]=Subhex(memory[address],"01",flag,false);
                 }else{
                     cout<<"Error: "<<data1<<"address is correct"<<endl;
@@ -31,7 +34,7 @@ void INR(string data1,string registers[],bool flag[],map<string,string>&memory){
          }
     }
     else{
-        cout<<"Error: "<<data1<<"address is correct"<<endl;
+        cout<<"Error: <<""address is correct"<<endl;
         exit(0);
     }
 }

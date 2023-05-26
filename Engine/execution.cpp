@@ -51,6 +51,12 @@ void execution(string pc,bool flag[],map<string,string>&memory,string registers[
          }else if(res=="ADD"){
             string data1 = cmd.substr(4,1);
             ADD(data1,registers,flag,memory);
+         }else if(res=="ADI"){
+            string data1 = cmd.substr(4,2);
+            ADI(data1,registers,flag);
+         }else if(res=="DCR"){
+            string data1 = cmd.substr(4,1);
+            DCR(data1,registers,flag,memory);
          }
      }
      else if(k==4){

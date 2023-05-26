@@ -1,2 +1,2 @@
-ADD B
+DCR A
 HLT
