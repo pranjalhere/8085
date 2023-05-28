@@ -17,12 +17,10 @@ class vansh8085{
     string pc;
     public:
     vansh8085(){
-       registers[1]="01";
-       registers[2]="03";
-        
-
-       registers[5]="04";
-       registers[6]="03";
+       registers[1]="0A";
+       registers[2]="23";
+       registers[5]="0B";
+       registers[6]="C2";
         
        
         for(int i=0;i<8;i++){

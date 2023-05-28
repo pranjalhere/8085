@@ -32,14 +32,16 @@ void DAD(string data,string registers[],bool flag[]){
 					for(int i = 3;i>=0;i--){
 					
 						int value = value16bit[i] + value16bitHL[i] + carry;
+					
 						if(value >= 16)
 							flag[0] = true;
 						else
 							flag[0] = false;
 						carry = value / 16;
 						value = value % 16;
-						if(value>=0 && value<=9)
-							resultant = (char)('0' + value) + resultant;
+						if(value>=0 && value<=9){
+							resultant = ((char)('0' + value) )+ resultant;
+						}
 						else{
 							switch(value){
 							
@@ -64,9 +66,17 @@ void DAD(string data,string registers[],bool flag[]){
 							}
 						}
 					}
-					
-					registers[5] = resultant[0] + resultant[1];
-					registers[6] = resultant[2] + resultant[3];	
+					string s1="";
+					string s2="";
+					for(int i=0;i<2;i++){
+						s1+=resultant[i];
+					}
+					for(int i=2;i<4;i++){
+						s2+=resultant[i];
+					}
+					registers[5]=s1;
+					registers[6]=s2;
+
 				}		
 				else{
 					
