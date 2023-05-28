@@ -57,6 +57,25 @@ void execution(string pc,bool flag[],map<string,string>&memory,string registers[
          }else if(res=="DCR"){
             string data1 = cmd.substr(4,1);
             DCR(data1,registers,flag,memory);
+         }else if(res=="INR"){
+             string data1 = cmd.substr(4,1);
+             INR(data1,registers,flag,memory);
+         }else if(res=="DCX"){
+            string data1 = cmd.substr(4,1);
+             DCX(data1,registers,flag);
+         }else if(res=="INX"){
+             string data1 = cmd.substr(4,1);
+             INX(data1,registers,flag);
+         }else if(res=="SUB"){
+             string data1 = cmd.substr(4,1);
+             SUB(data1,registers,flag,memory);
+         }else if(res=="SUI"){
+            string data1 = cmd.substr(4,2);
+            SUI(data1,registers,flag);
+         }
+         else if(res=="DAD"){
+            string data1 = cmd.substr(4,1);
+            DAD(data1,registers,flag);
          }
      }
      else if(k==4){

@@ -1,6 +1,8 @@
 #include<iostream>
 #include<string>
-#include"engine.h"
+#include"../header/regisfun.h"
+#include"../header/hexafun.h"
+#include"../header/datafun.h"
 using namespace std;
 
 void SUI(string data1,string registers[],bool flag[]){

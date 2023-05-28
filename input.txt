@@ -1,2 +1,2 @@
-DCR A
+DAD B
 HLT

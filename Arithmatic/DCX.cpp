@@ -1,13 +1,16 @@
 #include<iostream>
 #include<string>
 #include<map>
-#include"engine.h"
+#include"../header/regisfun.h"
+#include"../header/hexafun.h"
+#include"../header/datafun.h"
 using namespace std;
-void DCX(string arg,string registers[],bool flag[]){
+void DCX(string data,string registers[],bool flag[]){
 
-	int length = arg.length();
+	int length = data.length();
 	if(length == 1){
-	
+	    char arg = data[0];
+		
 		if((validReg(arg))){
 			
 			int registerID = registerNum(arg);

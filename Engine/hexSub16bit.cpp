@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-
+#include"../header/Converter.h"
 using namespace std;
 
 string hexSub16bit(string arg1,string arg2,bool flag[],bool carry){
@@ -11,8 +11,8 @@ string hexSub16bit(string arg1,string arg2,bool flag[],bool carry){
 	int value1[4];
 	int value2[4];
 	int tempAnswer[4];
-	hexToDecimal(arg1,value1);
-	hexToDecimal(arg2,value2);
+	Converter_h_to_D(arg1,value1);
+	Converter_h_to_D(arg2,value2);
 	for(int i=3;i>=0;i--){
 		
 		if(value1[i] < value2[i]){

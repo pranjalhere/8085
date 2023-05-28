@@ -17,7 +17,13 @@ class vansh8085{
     string pc;
     public:
     vansh8085(){
-       registers[0]="05";
+       registers[1]="01";
+       registers[2]="03";
+        
+
+       registers[5]="04";
+       registers[6]="03";
+        
        
         for(int i=0;i<8;i++){
             flag[i]=false;
@@ -45,10 +51,9 @@ class vansh8085{
         //     cout<<Line[i]<<endl;
         // }
 
-        cout<<registers[0]<<endl;
-        
+        cout<<registers[5];
+        cout<<registers[6];
        
-        
         
     }
     void check(){
