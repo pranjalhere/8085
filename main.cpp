@@ -22,7 +22,7 @@ class vansh8085{
             flag[i]=false;
         }
         flag[0]=true;
-        pc="3002";
+        pc="3000";
     }
     void start(){
         cout<<"Enter the starting Address"<<endl;
@@ -45,10 +45,8 @@ class vansh8085{
         //     cout<<Line[i]<<endl;
         // }
 
-       cout<<registers[0]<<endl;
-        cout<<registers[1]<<endl;
-
-       cout<<pc<<endl;
+        cout<<registers[0]<<endl;
+        cout<<pc<<endl;
         
     }
     void check(){

@@ -48,9 +48,8 @@ int  execution(string &pc,bool flag[],map<string,string>&memory,string registers
          else if(res=="MVI"){
             string data1=cmd.substr(4,1);
             string data2=cmd.substr(6,4);
-             int k = operationSize(res);
-             pc = nextAddress(pc,k);
-             cout<<pc<<endl;
+            int k = operationSize(res);
+            pc = nextAddress(pc,k);
             MVI(data1,data2,registers,flag,memory);
             
          }
@@ -157,19 +156,24 @@ int  execution(string &pc,bool flag[],map<string,string>&memory,string registers
      }else if(k==2){
         if(res=="JC"){
             string data1 = cmd.substr(3,4);
-            string k=JC(data1,pc,registers,flag);
-            int arr[4]={0,0,0,0};
-            int arr1[4]={0,0,0,0};
-            Converter_h_to_D(k,arr);
-            Converter_h_to_D(pc,arr1);
-            int one= Arraytoint(arr);
-            int two=Arraytoint(arr1);
-            int dif = one-two; 
-            if(dif!=3){
-                if(dif>3){
-                  while(dif!=0){
-                    string temp="";
+            string rs=JC(data1,pc,registers,flag);
+            if(rs==pc){
+                int k = operationSize(res);
+                pc = nextAddress(pc,k);
+                return 1;
+            }
+            else{
+                int arr[4]={0,0,0,0};
+                int arr1[4]={0,0,0,0};
+                Converter_h_to_D(rs,arr);
+                Converter_h_to_D(pc,arr1);
+                int one= Arraytoint(arr);
+                int two=Arraytoint(arr1);
+                int dif = one-two;
+                if(dif>0){
+                    while(dif!=0){
                     for(int j=i;j<commands.size();j++){
+                        string temp="";
                         for(int l=0;l<commands[j].size();l++){
                              if(commands[j][l]!=' '){
                                     temp+= commands[j][l];
@@ -178,33 +182,46 @@ int  execution(string &pc,bool flag[],map<string,string>&memory,string registers
                              }
                         }
                         int op = operationSize(temp);
+                        if(dif>0){
+                        //jaise yhn pc update ho rha h na aise hi
+                        pc = nextAddress(pc,op);
                         dif-=op;
                         nxt++;
-                    }
-                  }
-                }else{
-                    while(dif!=0){
-                    string temp="";
-                    for(int j=i;j>=0;j--){
-                        for(int l=0;l<commands[j].size();l++){
-                             if(commands[j][l]!=' '){
-                                    temp+= commands[j][l];
-                                }else{
-                                    break;
-                             }
                         }
-                        int op = operationSize(temp);
-                        dif+=op;
-                        nxt--;
+                        else {
+                            break;
+                        }
                     }
                   }
                 }
-                return nxt;
-            }else{
-               return 1;
+                else{
+                     while(dif!=0){
+                    for(int j=i;j<commands.size();j++){
+                        string temp="";
+                        for(int l=0;l<commands[j].size();l++){
+                             if(commands[j][l]!=' '){
+                                    temp+= commands[j][l];
+                                }else{
+                                    break;
+                             }
+                        }
+                        int op = operationSize(temp);
+                            if(dif<0){
+                                //pc = nextAddress(pc,op);
+                                //jaise yeh pc update ho rha h na waise hi ek prevadress ka function bnega jo pc ko prev krega
+                                dif+=op;
+                                nxt--;
+                            }
+                            else 
+                            {
+                                break;
+                            }
+                    }
+                  }
+                
+                }
             }
-           
-            
+            return nxt;    
         }
         else if(res=="JZ"){
             string data1 = cmd.substr(3,4);
