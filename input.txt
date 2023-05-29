@@ -1,2 +1,3 @@
-DAD B
+MVI B,45
+MVI A,23
 HLT

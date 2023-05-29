@@ -3,4 +3,6 @@
 using namespace std;
 #include"../Engine/validAddress.cpp"
 #include"../Engine/increaseAddress.cpp"
+#include"../Engine/operationSize.cpp"
+#include"../Engine/nextAddress.cpp"
 #endif

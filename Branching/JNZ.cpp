@@ -1,9 +1,10 @@
 #include<iostream>
 #include<string>
-#include"engine.h"
+#include"../header/Converter.h"
+#include"../header/addrfun.h"
 using namespace std;
 
-string JZ(string data1,string pc,string registers[],bool flag[]){
+string JNZ(string data1,string pc,string registers[],bool flag[]){
     if(flag[6]==false){
         return data1;
     }else{
@@ -21,12 +22,12 @@ string JZ(string data1,string pc,string registers[],bool flag[]){
             resvalue%=16;
 
             if(resvalue>=0 && resvalue<=9){
-                res=(char)('0'+value)+res;
+                res=(char)('0'+resvalue)+res;
             }else{
-                res=(char)('A'+(value-10))+res;
+                res=(char)('A'+(resvalue-10))+res;
             }
         }
-        if(validAddress(res)){
+        if(validAddr(res)){
             return res;
         }else{
             cout<<"Error In JZ Instruction"<<endl;

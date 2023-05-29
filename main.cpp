@@ -17,16 +17,12 @@ class vansh8085{
     string pc;
     public:
     vansh8085(){
-       registers[1]="0A";
-       registers[2]="23";
-       registers[5]="0B";
-       registers[6]="C2";
-        
        
         for(int i=0;i<8;i++){
             flag[i]=false;
         }
-        pc="";
+        flag[0]=true;
+        pc="3002";
     }
     void start(){
         cout<<"Enter the starting Address"<<endl;
@@ -49,9 +45,10 @@ class vansh8085{
         //     cout<<Line[i]<<endl;
         // }
 
-        cout<<registers[5];
-        cout<<registers[6];
-       
+       cout<<registers[0]<<endl;
+        cout<<registers[1]<<endl;
+
+       cout<<pc<<endl;
         
     }
     void check(){

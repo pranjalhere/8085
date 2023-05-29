@@ -7,7 +7,7 @@ using namespace std;
 void MVI(string data1,string data2,string registers[],bool flag[],map<string,string>memory){
     int l1 = data1.length();
     int l2 = data2.length();
-    if(l1==1 && l2==4){
+    if(l1==1 && l2==2){
         char data1temp=data1[0];
         if(data1=="M"){
             string address = registers[5]+registers[6];
@@ -24,12 +24,12 @@ void MVI(string data1,string data2,string registers[],bool flag[],map<string,str
             registers[registerNum(data1temp)]=data2;
         }
         else{
-            cout<<"Error Occured"<<endl;
+            cout<<"Error Occured1"<<endl;
             exit(0);
         }
     }
     else{
-        cout<<"Error Occured"<<endl;
+        cout<<"Error Occured2"<<endl;
         exit(0);
     }
 }

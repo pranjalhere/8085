@@ -8,9 +8,11 @@
 
 using namespace std;
 
-void executionphase(string pc,bool flag[],map<string,string>&memory,string registers[],vector<string>&commands){
-    
-       for(int i=0;i<commands.size()-1;i++){
-           execution(pc,flag,memory,registers,commands[i]);
-       }
+void executionphase(string &pc,bool flag[],map<string,string>&memory,string registers[],vector<string>&commands){
+      int i=0;
+
+      while(i<commands.size()){
+         int k=execution(pc,flag,memory,registers,commands[i],commands,i);
+         i+=k;
+      }
 }
