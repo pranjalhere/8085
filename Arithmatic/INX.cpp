@@ -23,7 +23,6 @@ void INX(string data,string registers[],bool flag[]){
 				if((validData(registers[registerID])) == true && validData(registers[registerID+1]) == true){
 					
 					data16bit = data16bit + registers[registerID] + registers[registerID + 1];
-					//temporary =  hexAdd16bit(data16bit,"0001",flag,false);
 					temporary = increaseAddress(data16bit);
 					 s1 = s1 + temporary[0] + temporary[1];		
 					 s2 = s2 + temporary[2] + temporary[3];
@@ -32,24 +31,24 @@ void INX(string data,string registers[],bool flag[]){
 				}
 				else{
 					
-					cout<<"Error"<<endl;
+					cout<<"Error :Generated from the INX command Invalid data in register pair"<<endl;
 					exit(0);
 					
 				}
 			}
 			else{
-				cout<<"Error"<<endl;
+				cout<<"Error :Generated from the INX command Invalid register Pair"<<endl;
 				exit(0);
 			}
 		}
 		else{
-			cout<<"Error"<<endl;
+			cout<<"Error :Generated from the INX command Invalid register"<<endl;
 			exit(0);
 			
 		}
 	}
 	else{
-		cout<<"Error"<<endl;
+		cout<<"Error :Generated from the INX command Invalid command"<<endl;
 		exit(0);
 		
 	}

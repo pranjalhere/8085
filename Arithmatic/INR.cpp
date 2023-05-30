@@ -22,18 +22,18 @@ void INR(string data,string registers[],bool flag[],map<string,string>&memory){
                 if((validAddr(address))){
                     memory[address]=Addhexa(memory[address],"01",flag,false);
                 }else{
-                    cout<<"Error: "<<data1<<"address is correct"<<endl;
+                    cout<<"Error: Generated From the INR command Invalid Address generated from HL register Pair"<<endl;
                     exit(0);
                 }
             }
         }
         else{
-              cout<<"Error: "<<data1<<"address is correct"<<endl;
+              cout<<"Error: Generated From the INR command Invalid register"<<endl;
               exit(0);
          }
     }
     else{
-        cout<<"Error:""address is correct"<<endl;
+        cout<<"Error: Generated From the INR command Invalid command"<<endl;
         exit(0);
     }
 }

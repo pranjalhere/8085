@@ -11,10 +11,11 @@ void SUI(string data1,string registers[],bool flag[]){
         if((validData(data1))){
             registers[0] = Subhex(data1,registers[0],flag,true);
         }else{
-        cout<<"Error Invalid data"<<endl;
+        cout<<"Error :Generated from SUI command Invalid data"<<endl;
         exit(0);
          }
     }else{
-        cout<<"Error"<<endl;
+        cout<<"Error :Generated from SUI command trying to Subtract Invalid data"<<endl;
+        exit(0);
     }
 }

@@ -10,11 +10,11 @@ void LHLD(string data1,string registers[],bool flag[],map<string,string>&memory)
             registers[6] = memory[data1];
             registers[5] = memory[increaseAddress(data1)];
         }else{
-            cout<<"Error"<<endl;
+            cout<<"Error :Generated from the LHLD command Invalid Address"<<endl;
             exit(0);
         }
     }else{
-        cout<<"Error"<<endl;
+        cout<<"Error: Generated from the LHLD command Invalid Address"<<endl;
         exit(0);
     }
 }

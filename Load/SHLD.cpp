@@ -10,6 +10,6 @@ void SHLD(string data1,string registers[],bool flag[],map<string,string>&memory)
         memory[data1]=registers[6];
         memory[increaseAddress(data1)]=registers[5];
     }else{
-        cout<<"Error SHLD"<<endl;
+        cout<<"Error : Generated from the SHLD command"<<endl;
     }
 }

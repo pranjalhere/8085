@@ -20,12 +20,12 @@ void LXI(string data1,string data2,string registers[],bool flag[],map<string,str
                 registers[registerNum(datatemp)]=part1;
                 registers[registerNum(datatemp)+1]=part2;
             }else{
-                cout<<"Error"<<endl;
+                cout<<"Error : Generated from the LXI command Either the register or address are invalid"<<endl;
                 exit(0);
             }
         }
     else{
-        cout<<"Error"<<endl;
+        cout<<"Error : Generated from the LXI command Either the register or address are invalid"<<endl;
         exit(0);
     }
 }

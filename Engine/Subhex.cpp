@@ -11,7 +11,7 @@ string Subhex(string data1,string data2,bool flag[],bool carry){
     int op2[2];
     int calu[2];
 
-    Converter_h_to_D(data1,op1);//converting the hexadecimal number to Decimal
+    Converter_h_to_D(data1,op1);
     Converter_h_to_D(data2,op2);
     
     if(op1[1]<op2[1]){
@@ -34,17 +34,23 @@ string Subhex(string data1,string data2,bool flag[],bool carry){
     variable = calu[0]*16+calu[1];
 
    
-    bitset<8>dataInbinary(variable);//converting the varible into into the binary
+    bitset<8>dataInbinary(variable);
 
     int parity = dataInbinary.count();
 
-    if(parity%2==0 && parity!=0){ // setting the parity bits
+    if(parity%2==0 && parity!=0){
         flag[2]=true;
     }else{
         flag[2]=false;
     }
 
-    flag[7]=dataInbinary[7];//setting sign flag
+    flag[7]=dataInbinary[7];
+
+    if(parity==0){
+        flag[6]=true;
+    }else{
+        flag[6]=false;
+    }
     for(int i=1;i>=0;i--){
            if(calu[i]>=0 && calu[i]<=9){
                res=char('0'+calu[i])+res;

@@ -5,9 +5,6 @@
 using namespace std;
 
 void CMP(char data1,string registers[],bool flag[],map<string,string>&memory){
-
-
-  
         if(data1=='M'){
             string address = registers[5]+registers[6];
             if(registers[0]<memory[address]){
@@ -32,8 +29,7 @@ void CMP(char data1,string registers[],bool flag[],map<string,string>&memory){
                 flag[6]=false;
             }
         }else{
-
-            cout<<"Error"<<endl;
+            cout<<"Error : Generated from the CMP command"<<endl;
             exit(0);
         }
 }

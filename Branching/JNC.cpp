@@ -7,7 +7,12 @@ using namespace std;
 
 string JNC(string data1,string pc,string registers[],bool flag[]){
     if(flag[0]==false){
-        pc=data1;
+        if(validAddr(data1)){
+            pc=data1;
+        }else{
+            cout<<"Error :Generated from the  JNC command Invalid Jump address"<<endl;
+        }
+        
     }else{
         return pc;
     }

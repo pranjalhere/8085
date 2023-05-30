@@ -9,13 +9,13 @@ void MVI(string data1,string data2,string registers[],bool flag[],map<string,str
     int l2 = data2.length();
     if(l1==1 && l2==2){
         char data1temp=data1[0];
-        if(data1=="M"){
+        if(data1temp=='M'){
             string address = registers[5]+registers[6];
-            if(validData(data2)){
+            if(validData(data2) && validAddr(address)){
                 memory[address]=data2;
             }
             else{
-                cout<<"Error : Invalid value"<<endl;
+                cout<<"Error : Generated From the MVI command while trying to mov the data into the memory location"<<endl;
                 exit(0);
             }
         }
@@ -24,12 +24,12 @@ void MVI(string data1,string data2,string registers[],bool flag[],map<string,str
             registers[registerNum(data1temp)]=data2;
         }
         else{
-            cout<<"Error Occured1"<<endl;
+            cout<<"Error :Generated from the MVI command either the regsiter or data are invalid"<<endl;
             exit(0);
         }
     }
     else{
-        cout<<"Error Occured2"<<endl;
+        cout<<"Error:Generated from the MVI command"<<endl;
         exit(0);
     }
 }

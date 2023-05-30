@@ -17,7 +17,7 @@ void SUB(string data,string registers[],bool flag[],map<string,string>&memory){
 
                 registers[0] = Subhex(registers[regID],registers[0],flag,true);
                 }else{
-                    cout<<"Error"<<endl;
+                    cout<<"Error :Generated from the SUB command You are trying to subtract the data of Invalid register"<<endl;
                     exit(0);
                 }
             }else{
@@ -27,13 +27,13 @@ void SUB(string data,string registers[],bool flag[],map<string,string>&memory){
                     registers[0] = Subhex(memory[address],registers[0],flag,true);
                 }else{
                     
-                    cout<<"Error"<<endl;
+                    cout<<"Error :Generated from the SUB command Invalid data on the address pointed register pair"<<endl;
                     exit(0);
                 }
             }
         
     }else{
-        cout<<"Error"<<endl;
+        cout<<"Error :Generated from the SUB command Invalid command"<<endl;
         exit(0);
     }
 }

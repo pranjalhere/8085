@@ -17,6 +17,6 @@ void MOV (char data1,char data2,string registers[],bool flag[],map<string,string
    }else if(data1!='M' && data2!='M' && validReg(data1) && validReg(data2)){
         registers[registerNum(data1)]=registers[registerNum(data2)];
    }else{
-      cout<<"Error MOV"<<endl;
+      cout<<"Error : Generated from the MOV command"<<endl;
    }
 }

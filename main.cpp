@@ -6,6 +6,10 @@
 #include"./header/engine.h"
 #include"./header/addrfun.h"
 using namespace std;
+//Parity--->2
+//Sign flag--->7
+//carry-->0
+//zero-->6
 class MICRO8085{
     map<string,string>memory;
     map<string,string>debugmemory;
@@ -13,7 +17,7 @@ class MICRO8085{
     string registers[7];
     bool flag[8];
     string pc;
-    string oldpc="";
+    string oldpc;
     public:
     MICRO8085(){
        

@@ -11,7 +11,7 @@ void DAD(string data,string registers[],bool flag[]){
 
 	int length = data.length();
 	if(length == 1){
-	     char arg = data[0];
+	    char arg = data[0];
 		if(validReg(arg)){
 		
 			int registerID = registerNum(arg);
@@ -80,25 +80,25 @@ void DAD(string data,string registers[],bool flag[]){
 				}		
 				else{
 					
-					cout<<"Error"<<endl;
+					cout<<"Error: Generated from the DAD command register pair contains invalid data"<<endl;
 					exit(0);
 					
 				}
 			}
 			else{
-				cout<<"Error"<<endl;
+				cout<<"Error: Generated from DAD Command Invalid Register"<<endl;
 				exit(0);
 				
 			}
 		}
 		else{
-			cout<<"Error"<<endl;
-			exit(0);
+			cout<<"Error: Generated from the DAD CommandYou are Trying Add with Invalid Register pair"<<endl;
+		    exit(0);
 			
 		}
 	}
 	else{
-		cout<<"Error"<<endl;
+		cout<<"Error: Generated from the DAD CommandYou are Trying Add with Invalid Register pair"<<endl;
 		exit(0);
 	}
 

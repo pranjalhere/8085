@@ -15,11 +15,11 @@ void STAX(string data1,string registers[],bool flag[],map<string,string>&memory)
             if(validAddr(address)){
                 memory[address]=registers[0];
             }else{
-                cout<<"Error"<<endl;
+                cout<<"Error ::Generated from the STAX command invalid register pair"<<endl;
                 exit(0);
             }
         }else{
-            cout<<"Error"<<endl;
+            cout<<"Error :Generated from the STAX command invalid register pair"<<endl;
             exit(0);
         }
 }

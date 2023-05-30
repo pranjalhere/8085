@@ -9,11 +9,11 @@ void LDA(string data1,string registers[],bool flag[],map<string,string>&memory){
           if(validAddr(data1)){
               registers[0]=memory[data1];
           }else{
-              cout<<"Error LDA"<<endl;
+              cout<<"Error :Generated from the LDA command Invalid Address"<<endl;
               exit(0);
           }
       }else{
-          cout<<"Error LDA"<<endl;
+          cout<<"Error: Generated form LDA command Invalid Address"<<endl;
           exit(0);
       }
 }

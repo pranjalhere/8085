@@ -6,7 +6,12 @@ using namespace std;
 
 string JNZ(string data1,string pc,string registers[],bool flag[]){
     if(flag[6]==false){
-        pc = data1;
+        if(validAddr(data1)){
+           pc = data1;
+        }else{
+            cout<<"Error : Generated from the JNZ command Invalid jump address"<<endl;
+        }
+        
     }else{
         return pc;
     }

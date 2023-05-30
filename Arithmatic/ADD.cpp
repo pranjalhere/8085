@@ -11,7 +11,7 @@ void ADD(string data,string registers[],bool flag[],map<string,string>&memory){
 
     if(len==1){
         char data1 = data[0];
-        if((validReg(data1))|| validRegpair(data1)){
+        if((validReg(data1)) || validRegpair(data1)){
             if(data1!='M'){
                 int regId = (registerNum(data1));
                 //regiter 0 act as as the accumulator
@@ -22,16 +22,16 @@ void ADD(string data,string registers[],bool flag[],map<string,string>&memory){
                 if(address>="0000" && address<="FFFF"){
                     registers[0] = Addhexa(memory[address],registers[0],flag,true);
                 }else{
-                    cout<<"Error: "<<endl;
+                    cout<<"Error: Generated from the ADD command Invalid Address given in HL pair"<<endl;
                     exit(0);
                 }
             }
         }else{
-            cout<<"Error"<<endl;
+            cout<<"Error: Generated from ADD data with add command is not appropiates"<<endl;
             exit(0);
         }
     }else{
-        cout<<"Error"<<endl;
+        cout<<"Error: Generated From ADD Command"<<endl;
         exit(0);
     }
 }

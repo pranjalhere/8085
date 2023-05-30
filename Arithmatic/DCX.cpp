@@ -30,25 +30,25 @@ void DCX(string data,string registers[],bool flag[]){
 					registers[registerID+1] = s2;
 				}
 				else{
-					cout<<"Error"<<endl;
+					cout<<"Error : Generated from the DCX command Invalid data"<<endl;
 					exit(0);
 					
 				}
 			}
 			else{
-				cout<<"Error"<<endl;
+				cout<<"Error :Genenrated from the DCX command Not a valid Register pair"<<endl;
 				exit(0);
 			
 			}
 		}
 		else{
-			cout<<"Error"<<endl;
+			cout<<"Error :Genenrated from the DCX command Not a valid Register pair"<<endl;
 			exit(0);
 		
 		}
 	}
 	else{
-		cout<<"Error"<<endl;
+		cout<<"Error : Genenrated from the DCX command"<<endl;
 		exit(0);
 		
 	}
