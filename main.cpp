@@ -10,6 +10,7 @@ using namespace std;
 //Sign flag--->7
 //carry-->0
 //zero-->6
+//ac--->4
 class MICRO8085{
     map<string,string>memory;
     map<string,string>debugmemory;
@@ -132,7 +133,12 @@ class MICRO8085{
             }
             cout<<"\n";
             cout<<"\n";
-            cout<<"Flag Reegisters:"<<endl;
+            cout<<"Flag Representation:"<<endl;
+            cout<<"flag->1-->carry falg"<<endl;
+            cout<<"flag->3-->Parity falg"<<endl;
+            cout<<"flag->5-->Auxillary carry flag"<<endl;
+            cout<<"flag->8-->sign flag"<<endl;
+            
              for (int i = 0; i < 8; i++)
             {
                 cout<<flag[i]<<" ";

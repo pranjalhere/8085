@@ -14,21 +14,23 @@ string Subhex(string data1,string data2,bool flag[],bool carry){
     Converter_h_to_D(data1,op1);
     Converter_h_to_D(data2,op2);
     
-    if(op1[1]<op2[1]){
-        calu[1] = (16+op1[1]-op2[1]);
-        --op1[0];
+    if(op1[1]>op2[1]){
+        calu[1] = (16+op2[1]-op1[1]);
+        --op2[0];
+        flag[4]=true;
     }else{
-        calu[1] = op1[1]-op2[1];
+        calu[1] = op2[1]-op1[1];
     }
 
-    if(op1[0]<op2[0]){
+    if(op2[0]<op1[0]){
         if(carry==true){
             flag[0]=true;
 
-            calu[0]=(16+op1[0]-op2[0]);
+            calu[0]=(16+op2[0]-op1[0]);
+            flag[7]=true;
         }
     }else{
-        calu[0]=op1[0]-op2[0];
+        calu[0]=op2[0]-op1[0];
     }
 
     variable = calu[0]*16+calu[1];

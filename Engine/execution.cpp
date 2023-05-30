@@ -139,6 +139,9 @@ string execution(string &pc,bool flag[],map<string,string>&memory,string cmd,str
                 pc=rs;
             }
         
+        }else{
+            cout<<"Error: Syntax error invalid command"<<endl;
+            exit(0);
         }
      }
      else if(k==4){
@@ -163,6 +166,10 @@ string execution(string &pc,bool flag[],map<string,string>&memory,string cmd,str
              int k = operationSize(res);
              pc = nextAddress(pc,k);
         }
+        else{
+            cout<<"Error: Syntax error invalid command"<<endl;
+            exit(0);
+        }
      }else if(k==2){
         if(res=="JC"){
             string data1 = cmd.substr(3,4);
@@ -186,7 +193,13 @@ string execution(string &pc,bool flag[],map<string,string>&memory,string cmd,str
                 pc=rs;
             }
             
+        }else{
+            cout<<"Error: Syntax error invalid command"<<endl;
+            exit(0);
         }
+     }else{
+        cout<<"Error: Syntax error invalid command"<<endl;
+        exit(0);
      }
      return pc;
 }
