@@ -5,10 +5,11 @@
 #include<map>
 
 #include"./header/engine.h"
+#include"./header/addrfun.h"
 
 using namespace std;
 
-class vansh8085{
+class MICRO8085{
     map<string,string>memory;
     string registers[7];
     
@@ -16,13 +17,16 @@ class vansh8085{
     bool flag[8];
     string pc;
     public:
-    vansh8085(){
+    MICRO8085(){
        
         for(int i=0;i<8;i++){
             flag[i]=false;
         }
-        flag[0]=true;
-        pc="3000";
+        for(int i=0;i<7;i++){
+           registers[i]="NULL";
+        }
+        memory["2050"]="0F";
+        memory["2051"]="02";
     }
     void start(){
         cout<<"Enter the starting Address"<<endl;
@@ -44,9 +48,18 @@ class vansh8085{
         // for(int i=0;i<Line.size();i++){
         //     cout<<Line[i]<<endl;
         // }
+            
+        map<string,string>::iterator it = memory.begin();
+        while(it!=memory.end()){
+            cout<<it->first<<" : "<<it->second<<endl;
+            it++;
+        }
+       
+    //    cout<<registers[0]<<endl;
+    //    cout<<registers[1]<<endl;
+    //    cout<<pc<<endl;
 
-        cout<<registers[0]<<endl;
-        cout<<pc<<endl;
+    cout<<memory["3050"]<<endl;
         
     }
     void check(){
@@ -58,16 +71,38 @@ class vansh8085{
 
     void run()
     {
-        executionphase(pc,flag,memory,registers,Line);
+        string map_pc=pc;
+        for(int i=0;i<Line.size();i++){
+            if(i==0){
+                memory[pc]=Line[i];
+            }
+            if(i!=0){
+                memory[map_pc]=Line[i];
+            }
+             string temp="";
+            for(int j=0;j<Line[i].size();j++){
+                 if(Line[i][j]!=' '){
+                    temp+=Line[i][j];
+                 }else{
+                    break;
+                 }
+            }
+
+            int k = operationSize(temp);
+            map_pc=nextAddress(map_pc,k);
+        }
+        executionphase(pc,flag,memory,registers);
     }
 
     
 };
 
 int main(){
-    vansh8085 let;
+
+    MICRO8085 let;
+    let.start();
+    
     let.input();
     let.run();
-   // let.check();
     let.print();
 }

@@ -6,5 +6,4 @@ using namespace std;
 #include"../Branching/JMP.cpp"
 #include"../Branching/JNC.cpp"
 #include"../Branching/JZ.cpp"
-#include"../Branching/Arraytoint.cpp"
 #endif

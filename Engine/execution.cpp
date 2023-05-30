@@ -11,7 +11,7 @@
 
 using namespace std;
 
-int  execution(string &pc,bool flag[],map<string,string>&memory,string registers[],string cmd,vector<string>&commands,int i){
+string execution(string &pc,bool flag[],map<string,string>&memory,string cmd,string registers[]){
     int nxt=0;
      string res="";
      for(int i=0;i<cmd.size();i++){
@@ -117,17 +117,27 @@ int  execution(string &pc,bool flag[],map<string,string>&memory,string registers
          }else if(res=="JMP"){
             string data1 = cmd.substr(4,4);
             pc=JMP(data1,registers,flag);
-             int k = operationSize(res);
-             pc = nextAddress(pc,k);
         }
         else if(res=="JNC"){
             string data1 = cmd.substr(4,4);
-            pc=JNC(data1,pc,registers,flag);
+            string rs=JNC(data1,pc,registers,flag);
+            if(rs==pc){
+                 int k = operationSize(res);
+                pc = nextAddress(pc,k);
+            }else{
+                pc=rs;
+            }
             
         }
          else if(res=="JNZ"){
             string data1 = cmd.substr(4,4);
-            pc=JNZ(data1,pc,registers,flag);
+            string rs=JNZ(data1,pc,registers,flag);
+            if(rs==pc){
+                  int k = operationSize(res);
+                pc = nextAddress(pc,k);
+            }else{
+                pc=rs;
+            }
         
         }
      }
@@ -160,74 +170,23 @@ int  execution(string &pc,bool flag[],map<string,string>&memory,string registers
             if(rs==pc){
                 int k = operationSize(res);
                 pc = nextAddress(pc,k);
-                return 1;
+            }else{
+                pc=rs;
             }
-            else{
-                int arr[4]={0,0,0,0};
-                int arr1[4]={0,0,0,0};
-                Converter_h_to_D(rs,arr);
-                Converter_h_to_D(pc,arr1);
-                int one= Arraytoint(arr);
-                int two=Arraytoint(arr1);
-                int dif = one-two;
-                if(dif>0){
-                    while(dif!=0){
-                    for(int j=i;j<commands.size();j++){
-                        string temp="";
-                        for(int l=0;l<commands[j].size();l++){
-                             if(commands[j][l]!=' '){
-                                    temp+= commands[j][l];
-                                }else{
-                                    break;
-                             }
-                        }
-                        int op = operationSize(temp);
-                        if(dif>0){
-                        //jaise yhn pc update ho rha h na aise hi
-                        pc = nextAddress(pc,op);
-                        dif-=op;
-                        nxt++;
-                        }
-                        else {
-                            break;
-                        }
-                    }
-                  }
-                }
-                else{
-                     while(dif!=0){
-                    for(int j=i;j<commands.size();j++){
-                        string temp="";
-                        for(int l=0;l<commands[j].size();l++){
-                             if(commands[j][l]!=' '){
-                                    temp+= commands[j][l];
-                                }else{
-                                    break;
-                             }
-                        }
-                        int op = operationSize(temp);
-                            if(dif<0){
-                                //pc = nextAddress(pc,op);
-                                //jaise yeh pc update ho rha h na waise hi ek prevadress ka function bnega jo pc ko prev krega
-                                dif+=op;
-                                nxt--;
-                            }
-                            else 
-                            {
-                                break;
-                            }
-                    }
-                  }
-                
-                }
-            }
-            return nxt;    
-        }
+           
+
+        } 
         else if(res=="JZ"){
             string data1 = cmd.substr(3,4);
-            pc=JZ(data1,pc,registers,flag);
+            string rs=JZ(data1,pc,registers,flag);
+            if(rs==pc){
+                int k = operationSize(res);
+                pc = nextAddress(pc,k);
+            }else{
+                pc=rs;
+            }
             
         }
      }
-     return 1;
+     return pc;
 }
