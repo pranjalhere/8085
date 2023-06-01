@@ -55,4 +55,8 @@ This Project is made up in two language.All the commands and main are written in
 
 ## Contributions
 
-This project is made by Vansh Saini(https://github.com/the-vansh) and Pranjal Choudhary(https://github.com/pranjalhere).
+This project is made by 
+
+Vansh Saini(https://github.com/the-vansh)
+
+Pranjal Choudhary(https://github.com/pranjalhere).
