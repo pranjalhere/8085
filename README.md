@@ -59,4 +59,4 @@ This project is made by
 
 Vansh Saini(https://github.com/the-vansh)
 
-Pranjal Choudhary(https://github.com/pranjalhere).
+Pranjal Choudhary(https://github.com/pranjalhere)
